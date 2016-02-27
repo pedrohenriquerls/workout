@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="assets/css/stylesheet.css"> 
+</head>
+<body>
+	<h1>Workout log</h1>
+	<fieldset>
+		<legend>Add activity</legend>
+		<section class="form-inline" id="exlog">
+			<div class="input-append">
+  				<input id="hour-input" type="text">
+  				<span class="add-on">hours</span>
+			</div>
+			<select id="type-option" name="type-option">
+			  <option value="Run" selected>Run</option>
+			  <option value="Swim">Swim</option>
+			  <option value="Bicycle">Bicycle</option>
+			</select>
+			<div class="input-append">
+				<input class="datepicker" id="date-input" type="text">
+			</div>
+			<button id="add" type="submit">Add</button>
+		</section>
+	</fieldset>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Time</th>
+				<th>Type</th>
+				<th>Date</th>
+				<th></th>
+			</th>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<script type="text/template" id="row-template">
+		<td><%- hours %></td>
+		<td><%- type %></td>
+		<td><%- date %></td>
+		<td>
+			<span class="destroy">x</span>
+		</td>
+  	</script>
+
+	<script type="text/javascript" src="assets/js/zepto.js"></script>
+	<script type="text/javascript" src="assets/js/underscore.js"></script>
+	<script type="text/javascript" src="assets/js/backbone.js"></script>
+	<script type="text/javascript" src="assets/js/datepicker.js"></script>
+
+</body>
+</html>
