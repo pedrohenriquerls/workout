@@ -11,8 +11,7 @@ Logger.Exercise = Backbone.Model.extend({
     },
 
     today: function(){
-      var date = new Date();
-      return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      return moment().format('DD/MM/YYYY');
     }
 });
 
@@ -46,7 +45,11 @@ Logger.LoggerView = Backbone.View.extend({
       this.hours = this.$('#hour-input');
       this.type = this.$('#type-option');
       this.date = this.$('#date-input');
-      $('#date-input').datepicker();
+      $( ".datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: 'assets/img/calendar.png',
+        dateFormat: 'dd/mm/yy' 
+      });
 
       this.clearFields();
 
