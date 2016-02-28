@@ -8,7 +8,7 @@
 </head>
 <body>
 	<section class="principal">
-		<h1>Workout log</h1>
+		<h1 style="text-align:center">Workout log</h1>
 		<fieldset class="span6">
 			<legend>Add activity</legend>
 			<section class="form-inline" id="logger">
@@ -32,7 +32,7 @@
 				<button id="add" class="span3" type="submit">Add</button>
 			</section>
 		</fieldset>
-
+		<hr class="span6">
 		<div class="span6">
 			<table class="table table-striped">
 				<thead>
@@ -46,16 +46,17 @@
 				<tbody>
 				</tbody>
 			</table>
-
 		</div>
 	</section>
 
+	<h1 style="text-align:center"><span id="total-hour">0</span> Hours of exercices</h1>
+
 	<script type="text/template" id="row-template">
-		<td><%- hours %></td>
+		<td><%- hours %>h</td>
 		<td><%- type %></td>
 		<td><%- date %></td>
 		<td>
-			<span class="destroy">x</span>
+			<img src="assets/img/delete.png" width="20" class="destroy"></img>
 		</td>
   	</script>
 

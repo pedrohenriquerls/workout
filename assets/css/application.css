@@ -188,9 +188,6 @@ select {
   height: 30px;
   line-height: 30px; }
 
-h1 {
-  text-align: "center"; }
-
 .principal {
   max-width: 68em;
   margin-left: auto;
@@ -240,5 +237,19 @@ h1 {
   margin-left: 25.58941%; }
   .span6:last-child {
     margin-right: 0; }
+
+.table {
+  border: 1px solid; }
+  .table.table-striped tbody tr:nth-child(odd) {
+    background-color: #E1E8F6; }
+
+hr {
+  font-size: 1px;
+  line-height: 0;
+  clear: both;
+  padding: 5px; }
+
+.delete {
+  mouse: pointer; }
 
 /*# sourceMappingURL=application.css.map */

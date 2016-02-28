@@ -58,19 +58,20 @@ Logger.LoggerView = Backbone.View.extend({
     },
 
     createLog: function(){
-      var values = this.getValues();
+      var values = this.getValues(),
+          total = $('#total-hour');
 
-        if (values.valid){
-            var ex = new Logger.Exercise({
-                  hours: values.hours
-                , type:  values.type
-                , date:  values.date
-            });
-            this.logs.add(ex);
-        }
+      if (values.valid){
+          var ex = new Logger.Exercise({
+                hours: values.hours
+              , type:  values.type
+              , date:  values.date
+          });
+          this.logs.add(ex);
+          total.html(parseInt(total.html()) + parseInt(values.hours))
+      }
 
-        this.clearFields();
-        
+      this.clearFields();
     },
 
     createOnEnter: function(e){
@@ -132,7 +133,7 @@ Logger.RowView = Backbone.View.extend({
     template: _.template($('#row-template').html()),
 
     initialize: function(model) {
-      this.model.on('destroy', this.deleteRow, this);
+      this.model.on('destroy', this.deleteRow, this, model);
       $('table').show();
     },
 
@@ -145,9 +146,12 @@ Logger.RowView = Backbone.View.extend({
       this.model.destroy();
     },
 
-    deleteRow: function(){
+    deleteRow: function(model){
       var element = this.$el;
       element.remove();
+
+      var total = $('#total-hour');
+      total.html(parseInt(total.html()) - parseInt(model.attributes.hours))
     }
   });
 

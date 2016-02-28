@@ -13,9 +13,6 @@ select
 	height: 30px
 	line-height: 30px
 
-h1
-	text-align: 'center'
-
 .principal
 	@include outer-container
 
@@ -39,3 +36,18 @@ h1
 .span6
 	@include span-columns(6)
 	@include shift(3)
+
+.table
+	border: 1px solid
+	&.table-striped
+		tbody tr:nth-child(odd)
+			background-color: #E1E8F6
+
+hr
+	font-size: 1px
+	line-height: 0
+	clear: both
+	padding: 5px
+
+.delete
+	mouse: pointer
