@@ -241,6 +241,7 @@ select {
 .table {
   border: 1px solid; }
   .table tr td, .table tr th {
+    text-align: center;
     padding: 5px; }
   .table.table-striped tbody tr:nth-child(odd) {
     background-color: #E1E8F6; }
