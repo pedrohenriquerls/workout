@@ -46,6 +46,7 @@ Logger.LoggerView = Backbone.View.extend({
       this.hours = this.$('#hour-input');
       this.type = this.$('#type-option');
       this.date = this.$('#date-input');
+      $('#date-input').datepicker();
 
       this.clearFields();
 
