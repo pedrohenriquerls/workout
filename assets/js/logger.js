@@ -69,7 +69,8 @@ Logger.LoggerView = Backbone.View.extend({
           });
           this.logs.add(ex);
           total.html(parseInt(total.html()) + parseInt(values.hours))
-      }
+      }else
+        alert('Invalid values');
 
       this.clearFields();
     },
