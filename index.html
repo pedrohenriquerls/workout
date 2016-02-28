@@ -4,42 +4,51 @@
 	<meta charset="UTF-8">
 
 	<link rel="stylesheet" href="assets/css/application.css"> 
+	<link rel="stylesheet" href="assets/css/datepicker.css"> 
 </head>
 <body>
-	<h1>Workout log</h1>
-	<fieldset class="container">
-		<legend>Add activity</legend>
-		<section class="form-inline" id="logger">
-			<div class="span3" >
-  				<input id="hour-input" placeholder="time spent" type="number">
-			</div>
-			<select id="type-option" class="span3" name="type-option">
-				<option value="Run" selected>Run</option>
-				<option value="Swim">Swim</option>
-				<option value="Bicycle">Bicycle</option>
-			</select>
-			<div class="span3">
-				<input id="date-input" type="text">
-			</div>
-			<button id="add" class="span3" type="submit">Add</button>
-		</section>
-	</fieldset>
+	<section class="principal">
+		<h1>Workout log</h1>
+		<fieldset class="span6">
+			<legend>Add activity</legend>
+			<section class="form-inline" id="logger">
+				<div class="span3" >
+	  				<input id="hour-input" placeholder="time spent" type="number">
+				</div>
 
-	<div class="container">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Time</th>
-					<th>Type</th>
-					<th>Date</th>
-					<th></th>
-				</th>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+				<div class="span3">
+					<select id="type-option" name="type-option">
+						<option value="Run" selected>Run</option>
+						<option value="Swim">Swim</option>
+						<option value="Bicycle">Bicycle</option>
+					</select>
+				</div>
+				<div class="span3">
+					<input class="datepicker" id="date-input" type="text">
+					<span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+				</div>
+				<button id="add" class="span3" type="submit">Add</button>
+			</section>
+		</fieldset>
 
-	</div>
+		<div class="span6">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Time</th>
+						<th>Type</th>
+						<th>Date</th>
+						<th></th>
+					</th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+
+		</div>
+	</section>
 
 	<script type="text/template" id="row-template">
 		<td><%- hours %></td>
@@ -54,6 +63,7 @@
 	<script type="text/javascript" src="assets/js/underscore.js"></script>
 	<script type="text/javascript" src="assets/js/backbone.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/moment.js"></script>
 	<script type="text/javascript" src="assets/js/datepicker.js"></script>
 	<script type="text/javascript" src="assets/js/logger.js"></script>
 
